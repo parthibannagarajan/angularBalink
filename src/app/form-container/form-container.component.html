@@ -1,0 +1,44 @@
+<div>
+  <app-stepper></app-stepper>
+</div>
+
+<div class="wrapper">
+  <div class="form">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="fields">
+
+      <div class="personal" *ngIf="isPersonal">
+        <h2>Personal details</h2>
+        <app-personal-form [parent]="form" [titles]="titles"></app-personal-form>
+      </div>
+
+      <div class="address" *ngIf="isAddress">
+        <h2>Address deatils</h2>
+        <app-address-form [parent]="form"></app-address-form>
+      </div>
+
+      <div class="contact" *ngIf="isContact">
+        <h2>Contact details</h2>
+        <app-contact-form [parent]="form"></app-contact-form>
+      </div>
+
+      <div *ngIf="isContact">
+        <button type="submit" mat-raised-button (click)="openModal()" class="submit"
+          [ngClass]="{'submitValid': form.valid}" [disabled]="form.invalid">submit</button>
+      </div>
+    </form>
+
+
+    <div *ngIf="isPersonal || isAddress" class="next">
+      <button type="button" (click)="onBtnNext()" [disabled]="(form.get('personal.firstName').invalid ||
+      form.get('personal.lastName').invalid) ||
+       (form.get('address.country').invalid && isAddress)
+       ">Next</button>
+    </div>
+
+    <div *ngIf="isAddress || isContact" class="previous">
+      <button type="button" (click)="onBtnPrevious()">Previous</button>
+    </div>
+  </div>
+
+</div>

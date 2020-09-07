@@ -1,0 +1,17 @@
+<div [formGroup]="parent" class="fields">
+  <div formGroupName="personal">
+
+    <input type="text" class="title" placeholder="Title (eg: Mr/Mrs/Miss)" formControlName="title">
+    <input type="text" placeholder="First Name*" formControlName="firstName">
+
+    <div class="error" *ngIf="onRequired('firstName')">
+      First name is required
+    </div>
+
+    <input type="text" placeholder="Last Name*" formControlName="lastName">
+
+    <div class="error" *ngIf="onRequired('lastName')">
+      Last name is required
+    </div>
+  </div>
+</div>

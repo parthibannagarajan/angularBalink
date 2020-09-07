@@ -1,0 +1,11 @@
+<div [formGroup]="parent" class="fields">
+  <div formGroupName="address">
+    <input type="text" placeholder="Street" formControlName="street">
+    <input type="text" placeholder="City" formControlName="city">
+    <input type="text" placeholder="Country*" formControlName="country">
+
+    <div class="error" *ngIf="onRequired('country')">
+      Country is required
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "members": [
+    {
+      "title": "mr",
+      "firstName": "Jerôme",
+      "lastName": "Marseille",
+      "street": "1 rue henri beque",
+      "city": "bordeaux",
+      "country": "France",
+      "email": "bord@gmail.com",
+      "phone": "0987654321",
+      "id": 1
+    }
+  ]
+}

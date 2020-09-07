@@ -1,0 +1,21 @@
+<div [formGroup]="parent" class="fields">
+  <div formGroupName="contact">
+    <input type="text" placeholder="Email*" formControlName="email">
+    <div *ngIf="parent.get('contact.email').errors">
+      <div class="error" *ngIf="onRequired('email')">Email is required</div>
+      <div class="error" *ngIf="parent.get('contact.email').errors?.email">Email must be a valid email address</div>
+    </div>
+
+    <input type="text" placeholder="Phone" formControlName="phone">
+    <div *ngIf="parent.get('contact.phone')?.invalid" class="error">
+      Invalid phone number
+    </div>
+
+    <div class="check">
+      <label for="optin">I have read and agree to the <a href="#">terms of service</a></label>
+      <input class="optin" type="checkbox" id="optin" formControlName="optin">
+    </div>
+
+
+  </div>
+</div>

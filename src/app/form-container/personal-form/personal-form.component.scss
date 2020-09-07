@@ -1,0 +1,42 @@
+.error{
+  background: #B52D30;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 0 0 3px 3px;
+  line-height: 1;
+  padding: 6px 10px;
+  margin-top: -1px;
+}
+
+
+input{
+ display: block;
+ margin: 10px 0;
+ width: 400px;
+ background: transparent;
+ border: 0;
+ border-bottom: 2px solid #C5ECFD;
+ padding: 20px;
+ color: #C5ECFD;
+ font-size: medium;
+}
+
+
+.title{
+  width: 200px;
+}
+
+
+input::placeholder{
+  color: #C5ECFD;
+}
+
+
+label{
+  color: #fff;
+}
+
+
+
